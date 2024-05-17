@@ -1,0 +1,4 @@
+package companion
+
+class RecipeController {
+}

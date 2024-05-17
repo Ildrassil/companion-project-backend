@@ -3,6 +3,10 @@ package companion
 import grails.gorm.transactions.Transactional
 import org.springframework.http.HttpStatus
 
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
+
 class CategoryController {
     static allowedMethods = [index: 'GET', create: 'POST', save: 'POST', update: 'PUT', delete: 'DELETE']
     // POST
@@ -14,8 +18,7 @@ class CategoryController {
             return
         }
         Category category = new Category()
-        category.name = data.name
-        category.description = data.description
+        category.properties = datanow()
         Category.save(failOnError: true)
         respond(category, status: HttpStatus.CREATED)
     }
@@ -33,10 +36,17 @@ class CategoryController {
     // PUT
     @Transactional
     def update() {
+        def data = request.JSON
+        Category category = Category.get(params.id)
+        category.properties = data
+        category.save(failOnError: true)
+        respond category
 
     }
     // GET
     def show() {
+        Category category = Category.get(params.id)
+        respond category
 
     }
 

@@ -42,6 +42,7 @@ dependencies {
     compileOnly("io.micronaut:micronaut-inject-groovy")
     console("org.grails:grails-console")
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("mysql:mysql-connector-java:8.0.11")
     runtimeOnly("org.apache.tomcat:tomcat-jdbc")
     testImplementation("io.micronaut:micronaut-inject-groovy")
     testImplementation("org.grails:grails-gorm-testing-support")
@@ -52,7 +53,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("companion.project.backend.Application")
+    mainClass.set("companion.Application")
 }
 
 java {

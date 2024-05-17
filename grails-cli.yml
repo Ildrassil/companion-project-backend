@@ -1,5 +1,5 @@
 applicationType: rest_api
-defaultPackage: companion.project.backend
+defaultPackage: companion
 testFramework: spock
 sourceLanguage: groovy
 buildTool: gradle

@@ -1,4 +1,4 @@
-package model.submodel
+package companion.submodel
 
 enum MainCategory {
     REGULAR,
