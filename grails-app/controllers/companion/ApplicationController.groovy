@@ -10,6 +10,7 @@ class ApplicationController implements PluginManagerAware {
     GrailsPluginManager pluginManager
 
     def index() {
-        [grailsApplication: grailsApplication, pluginManager: pluginManager]
+      return  [grailsApplication: grailsApplication,
+               pluginManager: pluginManager]
     }
 }
