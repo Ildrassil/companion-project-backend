@@ -1,4 +1,4 @@
-package companion.project.backend
+package companion
 
 import grails.core.GrailsApplication
 import grails.plugins.GrailsPluginManager

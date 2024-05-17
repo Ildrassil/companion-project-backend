@@ -8,7 +8,7 @@ plugins {
     id "eclipse"
 }
 
-group = "companion.project.backend"
+group = "companion"
 
 repositories {
     mavenCentral()

@@ -1,4 +1,4 @@
-package companion.project.backend
+package companion
 
 class BootStrap {
 
