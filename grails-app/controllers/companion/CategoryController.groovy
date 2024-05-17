@@ -3,10 +3,6 @@ package companion
 import grails.gorm.transactions.Transactional
 import org.springframework.http.HttpStatus
 
-import java.time.Instant
-import java.time.LocalDate
-import java.time.LocalDateTime
-
 class CategoryController {
     static allowedMethods = [index: 'GET', create: 'POST', save: 'POST', update: 'PUT', delete: 'DELETE']
     // POST
