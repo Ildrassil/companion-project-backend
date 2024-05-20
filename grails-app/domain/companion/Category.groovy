@@ -6,6 +6,7 @@ class Category {
     String id
     String name
     String description
+    Recipe[] recipes
     Date dateCreated
     Date lastUpdated
     static mapping = {
