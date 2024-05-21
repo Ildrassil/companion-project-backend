@@ -1,6 +1,7 @@
 package companion
 
 import companion.submodel.MainCategory
+import companion.submodel.MeasurementUnit
 
 class RecipeService {
 
@@ -24,5 +25,12 @@ class RecipeService {
             return MainCategory.VEGAN
         }
 
+    }
+
+    def addRecipeIngredient(Recipe recipe, Ingredient ingredient, String amount, MeasurementUnit unit){
+        RecipeIngredient recipeIngredient = new RecipeIngredient(ingredient: ingredient, amount: amount, unit: unit)
+        recipe.addToRecipeIngredients(recipeIngredient)
+        recipe.save(flush: true)
+        return recipe
     }
 }

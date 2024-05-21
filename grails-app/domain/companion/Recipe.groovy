@@ -1,6 +1,7 @@
 package companion
 
 import companion.submodel.MainCategory
+import companion.submodel.MeasurementUnit
 
 
 class Recipe {
@@ -27,4 +28,5 @@ class Recipe {
         description type: 'text'
         shortDescription type: 'text'
     }
+
 }
