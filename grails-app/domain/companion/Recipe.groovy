@@ -14,6 +14,8 @@ class Recipe {
     Date dateCreated
     Date lastUpdated
 
+    static hasMany = [recipeIngredients: RecipeIngredient, categories: Category]
+
     static constraints = {
         lastUpdated nullable: true
         name blank: false

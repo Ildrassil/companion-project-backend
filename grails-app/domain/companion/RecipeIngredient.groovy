@@ -7,12 +7,12 @@ class RecipeIngredient {
     String id
     Ingredient ingredient
     String amount
-    MeasurementUnit measurementUnit
+    MeasurementUnit unit
 
     static constraints = {
         ingredient blank: false
         amount blank: false
-        measurementUnit blank: false
+        unit blank: false
     }
     static mapping = {
         id generator: 'sequence'

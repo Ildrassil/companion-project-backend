@@ -10,4 +10,8 @@ class RecipeController extends RestfulController{
        super(Recipe)
    }
 
+   def addRecipeIngredient(){
+
+   }
+
 }

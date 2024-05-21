@@ -6,9 +6,10 @@ class Category {
     String id
     String name
     String description
-    Recipe[] recipes
     Date dateCreated
     Date lastUpdated
+
+    static hasMany = [recipes: Recipe]
     static mapping = {
         id generator: 'sequence'
         description type: 'text'
