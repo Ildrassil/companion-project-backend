@@ -5,6 +5,5 @@ model{
 }
 
 json g.render(recipe){
-    recipeIngredients recipe.recipeIngredients*.properties*.subMap(['id', 'ingredient', 'amount', 'unit' ])
     categories recipe.categories*.properties*.subMap(['id', 'name'])
 }

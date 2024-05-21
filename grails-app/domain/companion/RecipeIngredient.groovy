@@ -4,10 +4,11 @@ import companion.submodel.MeasurementUnit
 
 
 class RecipeIngredient {
-    String id
+    Recipe recipe
     Ingredient ingredient
     String amount
     MeasurementUnit unit
+
 
     static constraints = {
         ingredient blank: false

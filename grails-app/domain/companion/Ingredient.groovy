@@ -3,7 +3,6 @@ package companion
 import companion.submodel.MainCategory
 
 class Ingredient {
-    String id
     String name
     MainCategory mainCategory
     Date dateCreated
