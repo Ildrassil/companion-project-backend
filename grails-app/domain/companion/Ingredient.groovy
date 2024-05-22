@@ -14,5 +14,8 @@ class Ingredient {
     }
     static mapping = {
         id generator: 'sequence'
+        mainCategory enumType: 'string'
     }
+
+
 }

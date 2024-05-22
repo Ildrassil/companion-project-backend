@@ -14,8 +14,10 @@ class RecipeIngredient {
         ingredient blank: false
         amount blank: false
         unit blank: false
+        recipe blank: false
     }
     static mapping = {
         id generator: 'sequence'
+        unit enumType: 'string'
     }
 }

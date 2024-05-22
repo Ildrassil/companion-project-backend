@@ -4,15 +4,20 @@ import grails.rest.RestfulController
 
 
 class RecipeController extends RestfulController {
-    static allowedMethods = []
+
+    static allowedMethods = [addCategory: "PUT"]
+
     RecipeController() {
         super(Recipe)
     }
 
-    def create() {
-        def data = request.JSON
-        Recipe recipe = new Recipe( data.properties)
+
+    def addCategory(Recipe recipe, Category category) {
+        recipe.addToCategories(category)
+        category.addToRecipes(recipe)
         recipe.save(flush: true)
+        category.save(flush: true)
         respond recipe
     }
+
 }

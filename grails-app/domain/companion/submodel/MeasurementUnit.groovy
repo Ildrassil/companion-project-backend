@@ -1,15 +1,15 @@
 package companion.submodel
 
 enum MeasurementUnit {
-    GRAM('g'),
-    KILOGRAM('kg'),
-    MILLILITER(),
-    LITER('l'),
-    TEASPOON('tsp'),
-    TABLESPOON('tbsp'),
-    PIECE('pcs'),
-    CLOVES('cloves'),
-    HEAD('head'),
-    BUNCH('bunch'),
-    PINCH('pinch')
+    g,
+    kg,
+    ml,
+    l,
+    tsp,
+    tbsp,
+    pcs,
+    Cloves,
+    Head,
+    Bunch,
+    Pinch
 }

@@ -15,5 +15,6 @@ class RecipeIngredientController extends RestfulController {
         }.list()
     }
 
+
 }
 
