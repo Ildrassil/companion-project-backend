@@ -6,21 +6,19 @@ import grails.gorm.transactions.Transactional
 
 class RecipeController extends RestfulController {
 
-    static allowedMethods = [addCategory: "PUT", listRecipeIngredients: "GET"];
+    static allowedMethods = [addCategory: "PUT", listRecipeIngredients: "GET"]
 
     RecipeController() {
         super(Recipe)
     }
 
     @Transactional
-    def addCategory() {
+    def addCategory(){
         def data = request.JSON
-        Recipe recipe = data.recipe
-        Category category = data.category
-        recipe.addToCategories(category)
-        category.addToRecipes(recipe)
-        recipe.save(flush: true)
-        category.save(flush: true)
+        Recipe recipe = Recipe.get(params.id)
+        Category category = Category.get(data.id)
+        recipe.categories.add(category)
+        recipe.save(flush: true, failOnError: true)
         respond recipe
     }
 

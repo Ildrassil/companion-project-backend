@@ -11,7 +11,7 @@ class RecipeUtil {
         }.list()
     }
 
-    public static MainCategory determineMainCategory(RecipeIngredient[] recipeIngredients ) {
+    public static MainCategory determineMainCategory(List<RecipeIngredient> recipeIngredients ) {
         if (recipeIngredients.size() == 0) {
             return MainCategory.REGULAR
         } else {

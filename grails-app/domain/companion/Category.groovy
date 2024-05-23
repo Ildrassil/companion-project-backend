@@ -7,7 +7,7 @@ class Category {
     Date dateCreated
     Date lastUpdated
 
-    static hasMany = [recipes: Recipe]
+
     static mapping = {
         id generator: 'sequence'
         description type: 'text'

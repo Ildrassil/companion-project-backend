@@ -27,8 +27,7 @@ class Recipe {
         mainCategory enumType: 'string'
     }
     def beforeUpdate(){
-        def recipeIngredients = RecipeUtil.listRecipeIngredients(this)
-        this.mainCategory = RecipeUtil.determineMainCategory(recipeIngredients)
+        this.mainCategory = RecipeUtil.determineMainCategory(RecipeUtil.listRecipeIngredients(this))
     }
 
 }
