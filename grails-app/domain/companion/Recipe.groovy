@@ -26,9 +26,9 @@ class Recipe {
         shortDescription type: 'text'
         mainCategory enumType: 'string'
     }
-    def beforeUpdate(Recipe recipe){
-        def recipeIngredients = RecipeIngredientController.listRecipeIngredients(recipe)
-        this.mainCategory = RecipeService.determineMainCategory(recipeIngredients)
+    def beforeUpdate(){
+        def recipeIngredients = RecipeUtil.listRecipeIngredients(this)
+        this.mainCategory = RecipeUtil.determineMainCategory(recipeIngredients)
     }
 
 }

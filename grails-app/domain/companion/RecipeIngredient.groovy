@@ -6,8 +6,8 @@ import companion.submodel.MeasurementUnit
 class RecipeIngredient {
     Recipe recipe
     Ingredient ingredient
-    String amount
-    MeasurementUnit unit
+    String amount = '0'
+    MeasurementUnit unit = MeasurementUnit.g
 
 
     static constraints = {
