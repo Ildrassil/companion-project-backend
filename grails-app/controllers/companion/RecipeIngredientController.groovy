@@ -14,27 +14,25 @@ class RecipeIngredientController extends RestfulController {
     @Transactional
     def create() {
         def data = request.JSON
-        Recipe recipe = data.recipe
-        Ingredient ingredient = data.ingredient
+        Recipe recipe = Recipe.get(data.recipe.id)
+        Ingredient ingredient = Ingredient.get(data.ingredient.id)
         RecipeIngredient recipeIngredient = new RecipeIngredient(recipe: recipe, ingredient: ingredient)
         recipeIngredient.save(flush: true)
         respond recipeIngredient
     }
 
-    @Transactional
+
     def listRecipeIngredients() {
-        def data = request.JSON
-        Recipe recipe = data.properties
+        Recipe recipe = Recipe.get(params.id)
         respond RecipeUtil.listRecipeIngredients(recipe)
     }
 
     @Transactional
     def update() {
         def data = request.JSON
-        RecipeIngredient recipeIngredient = data.recipeIngredient
         RecipeIngredient recipeIngredientInstance = RecipeIngredient.get(params.id)
-        recipeIngredientInstance.amount = recipeIngredient.amount
-        recipeIngredientInstance.unit = recipeIngredient.unit
+        recipeIngredientInstance.amount = data.amount
+        recipeIngredientInstance.unit = data.unit
         respond recipeIngredientInstance.save(flush: true)
     }
 
